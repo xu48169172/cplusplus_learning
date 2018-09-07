@@ -27,6 +27,14 @@ void Time::set_time(int hour, int miniute, int second)
 	this->miniute = miniute;
 	this->second = second;
 }
+
+void Time::show_time()
+{
+	cout << "hour:"<<this->hour<<" ";
+	cout << "miniute:"<<this->miniute<<" ";
+	cout << "second:"<<this->second<<" ";
+	cout << "\n";
+}
 int main()
 {
 	Time *time = new Time();
@@ -41,7 +49,7 @@ int main()
 	cout << "hour:"<<time1->hour<<" ";
 	cout << "miniute:"<<time1->miniute<<" ";
 	cout << "second:"<<time1->second<<" ";
-	cout << "\n"
+	cout << "\n";
 
 	Time time2(30,40,50);
 
@@ -49,4 +57,7 @@ int main()
 	cout << "miniute:"<<time2.miniute<<" ";
 	cout << "second:"<<time2.second<<" ";
 	cout << "\n";
+
+	Time time3(40,50,60);
+	time3.show_time();
 }
