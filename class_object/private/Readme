@@ -1,0 +1,1 @@
+将 hour  miniute 以及 second 声明成private 变量，外部不可见。
