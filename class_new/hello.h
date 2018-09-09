@@ -18,5 +18,5 @@ public:
 	operator int();
 	friend Time operator*(const int, const Time&);
 	friend ostream& operator<<(ostream& os, Time& t);
-	Time();
+//	Time();
 };
