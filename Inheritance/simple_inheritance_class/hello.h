@@ -19,3 +19,12 @@ public:
 	friend ostream& operator<<(ostream& os, Time& t);
 	Time();
 };
+class Realtime:public Time
+{
+private:
+	int day;
+public:
+	Realtime();
+	Realtime(int day, int hour, int miniute, int second);
+	void show_realtime();
+};
