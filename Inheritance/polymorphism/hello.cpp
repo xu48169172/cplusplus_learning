@@ -43,10 +43,10 @@ int main()
 {
 	Time time(30,40,50);
 	Realtime realtime(3,10,20,30);
-	// 
+	// 引用变量只能在初始化过程赋值 
 	Time& rtime = time;
 	rtime.show_time();
-
+	// 引用变量只能在声明时赋值，一旦赋值就一直跟随
 	Time& rtime1 = realtime;
 	rtime1.show_time();
 }
