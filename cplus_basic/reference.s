@@ -133,19 +133,20 @@ Disassembly of section .text:
  7ae:	48 83 ec 20          	sub    $0x20,%rsp
  7b2:	64 48 8b 04 25 28 00 	mov    %fs:0x28,%rax
  7b9:	00 00 
- 7bb:	48 89 45 f8          	mov    %rax,-0x8(%rbp)  //  used for stack guard check
+ 7bb:	48 89 45 f8          	mov    %rax,-0x8(%rbp)
  7bf:	31 c0                	xor    %eax,%eax
- 7c1:	48 c7 45 e0 0a 00 00 	movq   $0xa,-0x20(%rbp) // first stack  variable
+ 7c1:	48 c7 45 e0 0a 00 00 	movq   $0xa,-0x20(%rbp)
  7c8:	00 
- 7c9:	48 8d 45 e0          	lea    -0x20(%rbp),%rax  // get the rax address
- 7cd:	48 89 45 e8          	mov    %rax,-0x18(%rbp)  // store 
- 7d1:	48 c7 45 f0 14 00 00 	movq   $0x14,-0x10(%rbp) // third stack variable
+ 7c9:	48 8d 45 e0          	lea    -0x20(%rbp),%rax
+ 7cd:	48 89 45 e8          	mov    %rax,-0x18(%rbp)
+ 7d1:	48 c7 45 f0 14 00 00 	movq   $0x14,-0x10(%rbp)
  7d8:	00 
- 7d9:	48 8b 45 e8          	mov    -0x18(%rbp),%rax  // reference variable
- 7dd:	48 c7 00 14 00 00 00 	movq   $0x14,(%rax)      // change to new value 
+ 7d9:	48 8b 45 e8          	mov    -0x18(%rbp),%rax
+ 7dd:	48 8b 55 f0          	mov    -0x10(%rbp),%rdx
+ 7e1:	48 89 10             	mov    %rdx,(%rax)
  7e4:	b8 00 00 00 00       	mov    $0x0,%eax
- 7e9:	48 8b 55 f8          	mov    -0x8(%rbp),%rdx
- 7ed:	64 48 33 14 25 28 00 	xor    %fs:0x28,%rdx
+ 7e9:	48 8b 4d f8          	mov    -0x8(%rbp),%rcx
+ 7ed:	64 48 33 0c 25 28 00 	xor    %fs:0x28,%rcx
  7f4:	00 00 
  7f6:	74 05                	je     7fd <main+0x53>
  7f8:	e8 73 fe ff ff       	callq  670 <__stack_chk_fail@plt>
