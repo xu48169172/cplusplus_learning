@@ -2,14 +2,14 @@
 #include "hello.h"
 
 using namespace std;
-/*
+
 Time::Time()
 {
 	hour = 0;
 	miniute = 0;
 	second = 0;
 }
-*/
+
 Time::Time(int m_hour, int m_miniute, int m_second)
 {
 	/*
