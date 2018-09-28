@@ -54,5 +54,40 @@ int main()
 		std::cout << " " << x;
 	}
 	std::cout << std::endl;
+	// returns the maximum size of elements that the array container can hold
+	std::cout << "myarray size:" << myarray.size() << std::endl;
+	std::cout << "myarray max size:" << myarray.max_size() << std::endl;
+
+
+	// operator[] returns a reference to the element at positon n in the array container
+	for (std::int32_t i = 0;i<10;i++)
+		myarray[i] = i+10;
+	std::cout << "use operator[] out:";
+
+	for (std::int32_t i = 0;i<10;i++)
+		std::cout << " " << myarray[i];
+	std::cout << std::endl;
+
+	// rbegin: return reverse iterator to reverse beginning
+	// rend :  return reverse iterator to reverse end
+	std::cout << "reverse output container:";	
+	for (auto rit=myarray.rbegin();rit < myarray.rend();rit++)
+		std::cout << " " << *rit;
+	std::cout << std::endl;
+
+	// swap: exchange the content of the array by the content x, which is another array object of the same type
+	
+	std::array<int,5> first = {1,2,3,4,5};
+	std::array<int,5> second = {6,7,8,9,10};
+	first.swap(second);
+
+	std::cout << "first:";
+	for(int& x:first)
+		std::cout << " " << x;
+	std::cout << std::endl;
+	std::cout << "second:";
+	for (int& x:second)
+		std::cout << " " << x;
+	std::cout << std::endl;
 	std::cout << "Hello world" << std::endl;
 }
