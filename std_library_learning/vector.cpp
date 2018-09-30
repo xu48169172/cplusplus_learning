@@ -96,5 +96,59 @@ int main()
 	// std::vector::resize, resizes the container so that it contains n elements
 	// std::vector::shrink_to_fit, requests the container to reduce its capacity to fit its size.
 	// std::vector::size, returns the number of elements in the vector
-	//
+	// std::vector::swap, exchange the content of the container by the content of x, which is another vector object of the same type, sizes may differ
+	
+	myvector.clear();
+	std::cout << "myvector size:" << myvector.size()<<std::endl;
+	myvector.push_back(10);
+	while (myvector.back() != 0)
+		myvector.push_back(myvector.back() - 1);
+
+	std::cout << "use iterator to output:";
+	for (auto it=myvector.begin();it!=myvector.end();it++)
+		std::cout << " " << *it;
+	std::cout << std::endl;
+	std::cout << "use reverse iterator to output:";
+	for (auto it=myvector.rbegin();it!=myvector.rend();it++)
+		std::cout << " " << *it;
+	std::cout << std::endl;
+
+	std::cout << "emplace at first position:";
+	myvector.emplace(myvector.begin(),100);
+	for (auto it=myvector.begin();it!=myvector.end();it++)
+		std::cout << " " << *it;
+	std::cout << std::endl;
+	std::cout << "emplace_back:";
+	myvector.emplace_back(200);
+	for (auto it=myvector.begin();it!=myvector.end();it++)
+		std::cout << " " << *it;
+	std::cout << std::endl;
+	std::cout << "erase:";
+	myvector.erase(myvector.begin() + 5);
+	for (auto it=myvector.begin();it!=myvector.end();it++)
+		std::cout << " " << *it;
+	std::cout << std::endl;
+
+	std::cout << "insert:";
+	myvector.insert(myvector.begin()+3,200);
+	for (auto it=myvector.begin();it!=myvector.end();it++)
+		std::cout << " " << *it;
+	std::cout << std::endl;
+
+	std::cout << "operator=";
+	myvector = myvector1;
+	for (auto it=myvector.begin();it!=myvector.end();it++)
+		std::cout << " " << *it;
+	std::cout << std::endl;
+
+	std::cout << "operator[]";
+	for (std::int32_t i=0;i<myvector.size();i++)
+		std::cout << " " << myvector[i];
+	std::cout << std::endl;
+
+	std::cout << "pop_back";
+	myvector.pop_back();
+	for (auto it=myvector.begin();it!=myvector.end();it++)
+		std::cout << " " << *it;
+	std::cout << std::endl;
 }
